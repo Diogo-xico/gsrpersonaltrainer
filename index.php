@@ -214,7 +214,7 @@
         </form>
         
 
-            <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6">
                 <h1 class="p-2">Perguntas Frequentes</h1>
                 <div class="p-1" id="pergunta1">
                     <a class="btn btn2 text-start" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
@@ -359,6 +359,25 @@
 
         })
 
+            
+            const btns = document.querySelectorAll(".btn2");
+
+            
+            btns.forEach(btn => {
+            btn.addEventListener("click", function() {
+                const thisCollapse = this.nextElementSibling;
+      
+                const siblings = Array.from(this.parentNode.parentNode.children);
+                siblings.forEach(sibling => {
+                const collapse = sibling.querySelector(".collapse.show");
+                if (collapse && collapse !== thisCollapse) {
+                    const bsCollapse = new bootstrap.Collapse(collapse);
+                    bsCollapse.hide();
+                }
+                });
+            });
+            });
+        
            
     </script>
 
