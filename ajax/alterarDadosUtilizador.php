@@ -2,7 +2,6 @@
 <?php
     require('../includes/connection.php');
 
-
     $email = $_POST['userMail'];
     $nome = $_POST['userNome'];
     $sobrenome = $_POST['userSobreNome'];
@@ -16,17 +15,9 @@
     $imagem = $_Files['userImage'];
     
 
-
-
     if (isset($_SESSION['id'])){
         $clientId = $_SESSION['id'];
     }
-    else{
-        $clientId = 0;
-    }
-
-
-
     
     $img_name = $_FILES['userImage']['name'];
     $img_size = $_FILES['userImage']['size'];
@@ -75,16 +66,13 @@
                     exit;
                 }
 
-
-
                 $sth->execute();
 
 
                 header('Location:../perfilUtilizador.php');
                 $sth = null;
 
-                die();
-                
+                die();            
                 
             } else {
                 header('Location:../editarUser.php?error=ficheiroInvalido');
@@ -92,11 +80,9 @@
             }
         }
 
-
     } else {
         header('Location:../editarUser.php?error=imagemInvalida');
         exit;
     }
-    
       
 ?>

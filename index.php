@@ -40,18 +40,17 @@
     <?php include_once('includes/connection.php') ?>
     <?php
 
-    if (isset($_SESSION['id']))
-        $clientId = $_SESSION['id'];
-    else
-        $clientId = 0;
+        if (isset($_SESSION['id']))
+            $clientId = $_SESSION['id'];
+   
 
-    $sql = 'SELECT * FROM utilizadores WHERE id = :id ';
+        $sql = 'SELECT * FROM utilizadores WHERE id = :id ';
 
-    $sth = $dbh->prepare($sql);
-    $sth->bindParam('id', $clientId);
-    $sth->execute();
+        $sth = $dbh->prepare($sql);
+        $sth->bindParam('id', $clientId);
+        $sth->execute();
 
-    $inf = $sth->fetchObject();
+        $inf = $sth->fetchObject();
 
     ?>
 
@@ -189,27 +188,30 @@
         <form action="#" id="submit">
             <div class="row">
             <div class="col-12 col-lg-6">
+                           
                 <h1>Tens alguma Dúvida? Contacta-me!</h1>
                 <div>Preenche o formulário para poder responder às tuas questões!</div>
-                <div class="form-floating mb-3 w-100">
-                    <input type="text" class="form-control" name="contactarNome" id="contactar-nome"
-                        placeholder="Nome da Pessoa">
-                    <label for="contactar-nome">O teu nome</label>
-                </div>
-                <div class="form-floating mb-3 w-100">
-                    <input type="email" class="form-control" name="contactarEmail" id="contactar-email"
-                        placeholder="name@example.com">
-                    <label for="contactar-email">O teu email</label>
-                </div>
-                <div class="form-floating mb-3 w-100">
-                    <div for="contactar-email">A tua dúvida</div>
-                    <textarea class="form-control" aria-label="With textarea" placeholder="name@example.com" id="contactar-pergunta"></textarea>
-                </div>
-                <div>
-                    <div class="col-lg-7 w-50">
-                        <button type="submit" class="btn1 my-3 ">Enviar</button>
+                
+                    <div class="form-floating mb-3 w-100">
+                        <input type="text" class="form-control" name="contactarNome" id="contactar-nome"
+                            placeholder="Nome da Pessoa" required>
+                        <label for="contactar-nome">O teu nome</label>
                     </div>
-                </div>
+                    <div class="form-floating mb-3 w-100">
+                        <input type="email" class="form-control" name="contactarEmail" id="contactar-email"
+                            placeholder="name@example.com" required>
+                        <label for="contactar-email">O teu email</label>
+                    </div>
+                    <div class="form-floating mb-3 w-100">
+                        <div for="contactar-email">A tua dúvida</div>
+                        <textarea class="form-control" aria-label="With textarea" placeholder="name@example.com" id="contactar-pergunta" required></textarea>
+                    </div>
+                    <div>
+                        <div class="col-lg-7 w-50">
+                            <button type="submit" class="btn1 my-3 ">Enviar</button>
+                        </div>
+                    </div>
+                
             </div>
         </form>
         
@@ -338,12 +340,15 @@
     <script>
 
 
+            
+
         const nome= document.getElementById('contactar-nome')
         const email= document.getElementById('contactar-email')
         const pergunta= document.getElementById('contactar-pergunta')
         const submit = document.getElementById('submit');
 
         submit.addEventListener('submit',(e)=>{
+            
             e.preventDefault();
             
             Email.send({

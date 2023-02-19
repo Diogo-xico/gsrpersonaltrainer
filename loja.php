@@ -19,7 +19,7 @@
         <?php
         $sql = 'SELECT * FROM produtos WHERE visivel = 1 AND categoria = :C';
         $sth = $dbh->prepare($sql);
-        echo $sth->rowCount(); //testar se estao a vir os dados da BD
+        
         ?>
             <!-- camisola -->
             <div class="container-fluid mt-5 pt-2 text-white" id="camisola">
@@ -29,7 +29,7 @@
                     <?php 
                     $sth->bindValue(':C', 1);
                     $sth->execute();
-                    while($artigo = $sth->fetchObject()){ //precorrer resultados
+                    while($artigo = $sth->fetchObject()){ 
                     ?>
 
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 pt-3">
@@ -59,7 +59,7 @@
                     <?php 
                     $sth->bindValue(':C', 2);
                     $sth->execute();
-                    while($artigo = $sth->fetchObject()){ //precorrer resultados
+                    while($artigo = $sth->fetchObject()){ 
                     ?>
 
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 pt-3">

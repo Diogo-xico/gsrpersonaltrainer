@@ -45,8 +45,6 @@
 
     if (isset($_SESSION['id']))
         $clientId = $_SESSION['id'];
-    else
-        $clientId = 0;
 
     $sql = 'SELECT * FROM utilizadores WHERE id = :id ';
 

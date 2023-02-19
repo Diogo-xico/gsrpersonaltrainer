@@ -16,18 +16,12 @@
     </header>
     <main>
         <div id="main-content">
+        
         <?php
-        if (isset($_GET['id']))
-            $id = $_GET['id'];
-        else
-            $id = '1';
 
-        if (isset($_SESSION['id']))
-            $clientId = $_SESSION['id'];
-        else
-            $clientId = 0;
-        ?>
-        <?php
+        $id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
+        $clientId = isset($_SESSION['id']) ? (int) $_SESSION['id'] : 0;
+
         $sql = 'SELECT * FROM produtos 
             WHERE  id = :id';
 
