@@ -11,6 +11,7 @@
 </head>
 <body id="body-artigo">
     <?php include_once('includes/connection.php') ?>
+    <?php include_once('ajax/guardarVariaveis.php') ?>
     <header>
         <?php include_once('includes/menu.php') ?>
     </header>
@@ -20,7 +21,7 @@
         <?php
 
         $id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
-        $clientId = isset($_SESSION['id']) ? (int) $_SESSION['id'] : 0;
+
 
         $sql = 'SELECT * FROM produtos 
             WHERE  id = :id';

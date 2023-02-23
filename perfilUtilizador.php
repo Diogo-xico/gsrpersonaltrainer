@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -34,21 +34,8 @@
 
 <body id="body-estilo2">
     <?php include_once('includes/connection.php') ?>
+    <?php include_once('ajax/guardarVariaveis.php') ?>
 
-    <?php
-
-    if (isset($_SESSION['id']))
-        $clientId = $_SESSION['id'];
-    
-    $sql = 'SELECT * FROM utilizadores WHERE id = :id ';
-
-    $sth = $dbh->prepare($sql);
-    $sth->bindParam('id', $clientId);
-    $sth->execute();
-
-    $inf = $sth->fetchObject();
-
-    ?>
 
     <header>
         <?php include_once('includes/menu.php'); ?>

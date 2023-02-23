@@ -1,6 +1,8 @@
 <?php session_start(); ?>
+
 <?php
     require('../includes/connection.php');
+    
 
     $email = $_POST['userMail'];
     $nome = $_POST['userNome'];

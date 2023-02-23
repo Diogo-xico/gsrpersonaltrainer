@@ -27,6 +27,7 @@
             padding: .8rem;
         }
 
+
     </style>
 </head>
 
@@ -69,11 +70,10 @@
                         <div class="d-flex align-items-center"><a class="text-white me-3"
                                 href="includes/logoutUtilizador.php" ><i class="bi bi-box-arrow-right"></i></a>
 
-                        <?php } ?>
-                        <div class="d-flex alignt-items-center me-3" id="btn-shop-cart" class="text-white me-3">
-                            <i class="bi bi-cart position-relative text-white"></i>
-                        </div>
-
+                        <?php } ?>                      
+                        <div class="d-flex alignt-items-center me-3 text-white me-3" id="btn-shop-cart" >
+                            <i class="bi bi-cart position-relative text-white hide"></i>
+                        </div>                     
                     </div>
 
 
@@ -92,6 +92,7 @@
         if (isset($_SESSION['carrinho'])) {
             foreach ($_SESSION['carrinho'] as $carrinho) {
                 $total = 0;
+                
                 $quantidade = 0;
                 $idProduto = $carrinho['idproduto'];
                 $sth = $dbh->prepare("SELECT * FROM produtos WHERE id= :idproduto");
