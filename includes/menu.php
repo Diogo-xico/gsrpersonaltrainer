@@ -1,5 +1,5 @@
 <!-- menu principal -->
-
+<?php include_once('ajax/guardarVariaveis.php') ?>
 <head>
     <style>
         .texto a:hover {
@@ -69,13 +69,17 @@
                         ?>
                         <div class="d-flex align-items-center"><a class="text-white me-3"
                                 href="includes/logoutUtilizador.php" ><i class="bi bi-box-arrow-right"></i></a>
-
-                        <?php } ?>                      
+                                <?php if (($inf->permissao) == 1){?>    
+                                     <div class="d-flex align-items-center"><a class="text-white me-3"
+                                        href="consultarClientes.php" ><i class="bi bi-search"></i></a>
+                        <?php }} ?>
+                                             
                         <div class="d-flex alignt-items-center me-3 text-white me-3" id="btn-shop-cart" >
-                            <i class="bi bi-cart position-relative text-white hide"></i>
-                        </div>                     
+                            <i class="bi bi-cart position-relative text-white"></i>
+                        </div>      
+                            
                     </div>
-
+                    
 
                 </div>
 
@@ -92,7 +96,6 @@
         if (isset($_SESSION['carrinho'])) {
             foreach ($_SESSION['carrinho'] as $carrinho) {
                 $total = 0;
-                
                 $quantidade = 0;
                 $idProduto = $carrinho['idproduto'];
                 $sth = $dbh->prepare("SELECT * FROM produtos WHERE id= :idproduto");
@@ -101,6 +104,7 @@
                 $artigo = $sth->fetchObject();
                 $total = $carrinho['precoproduto'] * $carrinho['quantidadeproduto'];
                 ?>
+
 
                 <div class="pt-5 d-md-flex justify-content-md-end">
                     <form action="ajax/removerCarrinho.php" method="post">
@@ -155,4 +159,5 @@
 
     <?php } ?>
     </div>
+
 </div>

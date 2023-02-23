@@ -33,12 +33,30 @@
 
 <body id="body-estilo2">
     <?php include_once('includes/connection.php') ?>
-    <?php include_once('ajax/guardarVariaveis.php') ?>
+   
 
 
     <header>
         <?php include_once('includes/menu.php'); ?>
     </header>
+
+    <?php
+
+        $id = isset($_GET['id']) ? (int) $_GET['id'] : 1;
+
+
+        $sql = 'SELECT * FROM utilizadores 
+            WHERE  id = :id';
+
+        $sth = $dbh->prepare($sql);
+        $sth->bindParam('id', $id);
+        $sth->execute();
+        ?>
+
+        <?php
+        $inf = $sth->fetchObject();
+        ?>
+
 
     <div id="perfil" class="container-fluid mt-5 p-5 reveal text-white ">
 
@@ -83,7 +101,7 @@
                 <div class="d-flex justify-content-center pb-3">
                     <a href="editarUser.php" class="btn btn1 mt-1 mb-3 text-center w-50" role="button">Editar Dados</a>
                 </div>
-            <?php } else { ?>
+        
 
                 <div
                     style=" background: linear-gradient(180deg, rgba(189, 152, 113, 0.8186624991793592) 0%, rgba(33, 37, 41, 1) 50%), min-height: 100vh;">
