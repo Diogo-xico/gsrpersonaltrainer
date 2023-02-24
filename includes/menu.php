@@ -1,33 +1,33 @@
 <!-- menu principal -->
-<?php include_once('ajax/guardarVariaveis.php') ?>
+
+
+
 <head>
     <style>
-        .texto a:hover {
-            color: #bd9871;
-        }
-        
-        #shop-cart::-webkit-scrollbar {
-            display: none;
-        }
+    .texto a:hover {
+        color: #bd9871;
+    }
 
-        #shop-cart {
-            position: fixed;
-            background: #212529;
-            right: 0;
-            width: 300px;
-            height: 100%;
-            z-index: 999;
-            color: #efefef;          
-            overflow-y: scroll;
-            -ms-overflow-style: none;
-        }
+    #shop-cart::-webkit-scrollbar {
+        display: none;
+    }
 
-        #shop-cart .p-cart {
-            display: flex;
-            padding: .8rem;
-        }
+    #shop-cart {
+        position: fixed;
+        background: #212529;
+        right: 0;
+        width: 300px;
+        height: 100%;
+        z-index: 999;
+        color: #efefef;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+    }
 
-
+    #shop-cart .p-cart {
+        display: flex;
+        padding: .8rem;
+    }
     </style>
 </head>
 
@@ -55,33 +55,33 @@
             <?php
             if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
                 ?>
-                <div class="d-flex align-items-center"><a class="text-white me-3" href="perfilUtilizador.php"><i
-                            class="bi bi-person"></i></a>
+            <div class="d-flex align-items-center"><a class="text-white me-3" href="perfilUtilizador.php"><i
+                        class="bi bi-person"></i></a>
                 <?php } else { ?>
 
-                    <div class="d-flex align-items-center"><a class="text-white me-3" href="loginUser.php"><i
-                                class="bi bi-person"></i></a>
+                <div class="d-flex align-items-center"><a class="text-white me-3" href="loginUser.php"><i
+                            class="bi bi-person"></i></a>
 
                     <?php } ?>
 
                     <?php
                     if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
                         ?>
+                    <div class="d-flex align-items-center"><a class="text-white me-3"
+                            href="includes/logoutUtilizador.php"><i class="bi bi-box-arrow-right"></i></a>
+                        <?php if (($inf->permissao) == 1){?>
                         <div class="d-flex align-items-center"><a class="text-white me-3"
-                                href="includes/logoutUtilizador.php" ><i class="bi bi-box-arrow-right"></i></a>
-                                <?php if (($inf->permissao) == 1){?>    
-                                     <div class="d-flex align-items-center"><a class="text-white me-3"
-                                        href="consultarClientes.php" ><i class="bi bi-search"></i></a>
-                        <?php }} ?>
-                                             
-                        <div class="d-flex alignt-items-center me-3 text-white me-3" id="btn-shop-cart" >
-                            <i class="bi bi-cart position-relative text-white"></i>
-                        </div>      
-                            
-                    </div>
-                    
+                                href="consultarClientes.php"><i class="bi bi-search"></i></a>
+                            <?php }} ?>
 
-                </div>
+                            <div class="d-flex alignt-items-center me-3 text-white me-3" id="btn-shop-cart">
+                                <i class="bi bi-cart position-relative text-white"></i>
+                            </div>
+
+                        </div>
+
+
+                    </div>
 
 
 
@@ -106,58 +106,59 @@
                 ?>
 
 
-                <div class="pt-5 d-md-flex justify-content-md-end">
-                    <form action="ajax/removerCarrinho.php" method="post">
-                        <input type="hidden" name="idProduto" value="<?= $artigo->id ?>">
-                        <button type="submit" class="btn-close btn-close-white px-4" aria-label="Close"></button>
-                    </form>
-                </div> 
+        <div class="pt-5 d-md-flex justify-content-md-end">
+            <form action="ajax/removerCarrinho.php" method="post">
+                <input type="hidden" name="idProduto" value="<?= $artigo->id ?>">
+                <button type="submit" class="btn-close btn-close-white px-4" aria-label="Close"></button>
+            </form>
+        </div>
 
-                <img src="imagens/<?= $artigo->imagem ?>" class="p-3 opacity-75" style="width:55%" alt="<?= $artigo->nome?>"></img>
-                <div>
-                    <div class="fs-6 text-uppercase">
-                        <?= $carrinho['nomeproduto'] ?>
-                    </div>
-                    <div class="fs-6 text-center">
-                        Preço: <?= $carrinho['precoproduto'] ?> € 
-                    </div>
-                    <?php if(($artigo -> categoria) === 1) { ?>
-                        <div class="fs-6 text-center">
-                        Tamanho: <?= $carrinho['tamanhoproduto'] ?>
-                    </div>
-                    <?php } else { ?>
-                    <div class="fs-6 text-center">
-                        Cor: <?= $carrinho['tamanhoproduto'] ?>
-                    </div>
-                    <?php } ?>
-                    <div class="fs-6 text-center">
-                        Quantidade: <?= $carrinho['quantidadeproduto'] ?>
-                    </div>
-                    <div class="fs-6 text-center pt-2">
-                        Semi-Total: <?= $total ?> €
-                    </div>
-                    <hr class="text-white">
-                </div>
-                <?php 
+        <img src="imagens/<?= $artigo->imagem ?>" class="p-3 opacity-75" style="width:55%"
+            alt="<?= $artigo->nome?>"></img>
+        <div>
+            <div class="fs-6 text-uppercase">
+                <?= $carrinho['nomeproduto'] ?>
+            </div>
+            <div class="fs-6 text-center">
+                Preço: <?= $carrinho['precoproduto'] ?> €
+            </div>
+            <?php if(($artigo -> categoria) === 1) { ?>
+            <div class="fs-6 text-center">
+                Tamanho: <?= $carrinho['tamanhoproduto'] ?>
+            </div>
+            <?php } else { ?>
+            <div class="fs-6 text-center">
+                Cor: <?= $carrinho['tamanhoproduto'] ?>
+            </div>
+            <?php } ?>
+            <div class="fs-6 text-center">
+                Quantidade: <?= $carrinho['quantidadeproduto'] ?>
+            </div>
+            <div class="fs-6 text-center pt-2">
+                Semi-Total: <?= $total ?> €
+            </div>
+            <hr class="text-white">
+        </div>
+        <?php 
             } 
         } ?>
 
 
-    <?php
+        <?php
     if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
-    ?> 
-        
-        <div class="my-5 mx-4">
-            <a href="vercarrinho.php" ><button class="btn1">Ver carrinho</button></a>
-        </div>      
-        
-    <?php } else { ?>
+    ?>
 
         <div class="my-5 mx-4">
-            <a href="loginUser.php" ><button class="btn1 ">Ver carrinho</button></a>
-        </div>   
+            <a href="vercarrinho.php"><button class="btn1">Ver carrinho</button></a>
+        </div>
 
-    <?php } ?>
+        <?php } else { ?>
+
+        <div class="my-5 mx-4">
+            <a href="loginUser.php"><button class="btn1 ">Ver carrinho</button></a>
+        </div>
+
+        <?php } ?>
     </div>
 
 </div>

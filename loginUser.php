@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -12,23 +11,24 @@
 </head>
 
 <style>
+.barra-fixa-login {
+    position: static;
+}
+
+
+@media (min-width:992px) {
+
     .barra-fixa-login {
-        position: static;
-    }
-
-
-    @media (min-width:992px) {
-
-        .barra-fixa-login {
-            position: sticky;
-
-        }
+        position: sticky;
 
     }
+
+}
 </style>
 
 <body id="body-estilo1">
     <?php include_once('includes/connection.php') ?>
+
     <header>
         <?php include_once('includes/menu.php'); ?>
     </header>
