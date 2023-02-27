@@ -170,7 +170,31 @@
 
 
         </form>
+        <div class="col-lg-7 w-25">
+                            <button class="btn1 my-3 " data-bs-toggle="modal"
+                        data-bs-target="#confirmarEncomenda"><i class="bi bi-pencil-square"></i>Editar </button></button>
+                        </div>
 
+                        <div class="modal fade" id="confirmarEncomenda" tabindex="-1" 
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Aviso</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-black">
+                                    <div>Tem a certeza que pretende finalizar a encomenda?</div>
+                                </div>
+                                <form action="ajax/encomenda.php">
+                                    <div class="modal-footer">
+                                        <button type="submit" name="update" class="btn1" value="update">Sim, desejo finalizar a encomenda!</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
     </div>
 

@@ -82,57 +82,137 @@
         </div>
     </div>
 
-    <div id="planos" class="container-fluid mt-4 p-5 reveal">
+    <div id="planos" class="container-fluid mt-4 p-5">
+
+            <?php
+
+            if (isset($_GET['error'])) {
+
+                if ($_GET['error'] == 'dadosIncorretos') {
+                    ?>
+                    <small class="alert alert-danger text-center"> Dados incorretos ou em falta</small>
+                    <?php
+                } else if ($_GET['error'] == 'imagemInvalida') {
+                    ?>
+                        <small class="alert alert-danger text-center"> Imagem Inválida</small>
+                    <?php
+                } else if ($_GET['error'] == 'tamanhoImagem') {
+                    ?>
+                            <small class="alert alert-danger"> A imagem só pode ter no máximo 5MBs</small>
+                    <?php
+                } else if ($_GET['error'] == 'ficheiroInvalido') {
+                    ?>
+                                <small class="alert alert-danger"> O ficheiro só pode ser do formato PNG, JPG OU JPEG </small>
+                    <?php
+                }
+            }
+            ?>
+
         <h1 class="plano-titulo text-center pb-4">Os teus planos</h1>
         <div class="row">
+        <?php
+            $query = 'SELECT * FROM plano WHERE visivel = 1';
+            $sth = $dbh->prepare($query);
+            $sth->execute();
+            while($plano = $sth->fetchObject()){
+        ?>
             <div class="col-12 col-md-6 col-lg-4 p-4 text-center">
-                <img class="img-fluid pb-2" src="imagens/avaliacao.png" alt="imagem de um avatar">
-                <h2 class="titulo-subplano pb-2">Avaliação Física</h2>
-                <div class="pb-2">Faço a avaliação física personalizada afim de encontrar os aspetos essenciais a
-                    trabalhar
-                    e para futuras comparações de melhorias.
-                </div>
-            </div>
+                <div class="plano position-relative reveal">
+                <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { 
 
-            <div class="col-12 col-md-6 col-lg-4 p-4 text-center">
-                <img class="img-fluid pb-2" src="imagens/treino.png" alt="imagem de um avatar">
-                <h2 class="titulo-subplano pb-2">Plano de Treino</h2 >
-                <div class="pb-2">Faço o plano de treino personalizado tendo em conta as avaliações, aspetos essenciais
-                    a
-                    trabalhar e os aspetos que desejas melhorar.
+                    if($inf->permissao == 1) { ?>
+                    <h2 class="position-absolute start-0 top-0 pb-2"><?= $plano->id?></h2>
+                    <?php }}     ?>
+                    <img class="img-fluid pb-2" src="imagens/planos/<?= $plano->imagem?>" alt="plano <?= $plano->titulo?>">
+                    <h2 class="titulo-subplano pb-2"><?= $plano->titulo?></h2>
+                    <div class="pb-2"><?= $plano->descricao?>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 p-4 text-center">
-                <img class="img-fluid pb-2" src="imagens/nutricao.png" alt="imagem de um avatar">
-                <h2  class="titulo-subplano pb-2">Plano de Nutrição</h2 >
-                <div class="pb-2">Organizo um plano de nutrição diretamente para ti, tendo em conta as necessidades do
-                    plano de treino
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 p-4 text-center">
-                <img class="img-fluid pb-2" src="imagens/motivacao.png" alt="imagem de um avatar">
-                <h2  class="titulo-subplano pb-2">Acompanhamento Motivacional</h2 >
-                <div class="pb-2">Sempre contigo nos momentos de foco para te dar apoio e atingirmos os teus
-                    objetivos.
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 p-4 text-center">
-                <img class="img-fluid pb-2" src="imagens/disponibilidade.png" alt="imagem de um avatar">
-                <h2  class="titulo-subplano pb-2">Disponibilidade Diária</h2 >
-                <div class="pb-2">Disponibilidade diária para treinarmos mediante marcação prévia.
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 p-4 text-center">
-                <img class="img-fluid pb-2" src="imagens/avaliacao.png" alt="imagem de um avatar">
-                <h2  class="titulo-subplano pb-2">Avaliação Física</h2 >
-                <div class="pb-2">Faço a avaliação física personalizada afim de encontrar os aspetos essenciais a
-                    trabalhar
-                    e para futuras comparações de melhorias.
-                </div>
-            </div>
+        <?php } if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { 
+
+                    if($inf->permissao == 1) { ?>
+                    <div class="d-flex justify-content-center">    
+                        <div class="col-sm-12 col-lg-7 w-25 pe-2">
+                            <button class="btn1 my-3" data-bs-toggle="modal"
+                        data-bs-target="#alterarPlano"><i class="bi bi-plus-square"></i> Adicionar Plano </button></button>
+                        </div>
+                        <div class=" col-sm-12 col-lg-7 w-25">
+                            <button class="btn1 my-3 " data-bs-toggle="modal"
+                        data-bs-target="#removerPlano"><i class="bi bi-dash-square"></i> Remover Plano </button></button>
+                        </div>
+
+                        <div class="modal fade" id="alterarPlano" tabindex="-1" 
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                       
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Adicionar Plano</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-black">
+                                        <form action="ajax/adicionarPlano.php" method="post" enctype="multipart/form-data">
+                                            <div class="form-floating mb-3 w-100">
+                                                <input name="titulo" type="text" class="form-control" placeholder="Titulo Plano"
+                                                    required>
+                                                <label for="contactar-email">Título do plano</label>
+                                            </div>
+                                            <div class="form-floating mb-3 w-100">
+                                                <div for="contactar-email">Descrição do Plano</div>
+                                                <textarea name="descricao" type="text" class="form-control" aria-label="With textarea" required></textarea>
+                                            </div>
+                                            <div class="w-100">
+                                                Imagem
+                                                <input name="imagem" type="file" class="form-control my-1" required">
+                                            </div>
+                                            <div class="pt-3">
+                                                <button type="submit" class="btn1" >Adicionar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                             </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="removerPlano" tabindex="-1" 
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                       
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Remover Plano</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-black">
+                                        <form action="ajax/removerPlano.php" method="post">
+                                            <div class="form-floating mb-3 w-100">
+                                                <input name="id" type="number" class="form-control" placeholder="Titulo Plano"
+                                                    required>
+                                                <label for="contactar-email">ID do plano</label>
+                                            </div>
+                                            <div class="pt-3">
+                                                <button type="submit" class="btn1" >Remover</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                             </div>
+                            </div>
+                        </div>
+
+                        
+                    <?php }} ?>
+                        
+            </div>    
+            
         </div>
     </div>
 
+    
     <div id="transformacoes" class="transformacoes pt-5 pb-5 reveal text-white">
 
         <div class="sub-transformacoes align-self-center text-start text-center p-4">

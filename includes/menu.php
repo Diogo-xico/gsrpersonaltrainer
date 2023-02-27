@@ -50,38 +50,36 @@
                 <a href="index.php#contactar" class="nav-link">Contactos</a>
                 <a href="index.php#contactar" class="nav-link">Perguntas Frequentes</a>
                 <a href="loja.php" class="nav-link">Loja</a>
-
             </div>
+            <div class="d-flex align-items-center">
             <?php
             if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
                 ?>
-            <div class="d-flex align-items-center"><a class="text-white me-3" href="perfilUtilizador.php"><i
-                        class="bi bi-person"></i></a>
-                <?php } else { ?>
+                    <div><a class="text-white me-3" href="perfilUtilizador.php"><i class="bi bi-person"></i></a></div>
+        <?php } else { ?>
 
-                <div class="d-flex align-items-center"><a class="text-white me-3" href="loginUser.php"><i
-                            class="bi bi-person"></i></a>
+                        <div><a class="text-white me-3" href="loginUser.php"><i class="bi bi-person"></i></a></div>
 
-                    <?php } ?>
-
-                    <?php
-                    if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
-                        ?>
-                    <div class="d-flex align-items-center"><a class="text-white me-3"
-                            href="includes/logoutUtilizador.php"><i class="bi bi-box-arrow-right"></i></a>
-                        <?php if (($inf->permissao) == 1){?>
-                        <div class="d-flex align-items-center"><a class="text-white me-3"
-                                href="consultarClientes.php"><i class="bi bi-search"></i></a>
-                            <?php }} ?>
-
-                            <div class="d-flex alignt-items-center me-3 text-white me-3" id="btn-shop-cart">
-                                <i class="bi bi-cart position-relative text-white"></i>
-                            </div>
-
-                        </div>
-
-
+                <?php } ?>
+                    <div class="d-flex alignt-items-center me-3 text-white me-3" id="btn-shop-cart">
+                        <i class="bi bi-cart position-relative text-white"></i>
                     </div>
+                    <?php
+                    
+            if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
+                 if (($inf->permissao) == 1){?>
+                        <div><a class="text-white me-3"
+                                 href="consultarClientes.php"><i class="bi bi-search"></i></a></div>
+                                <?php } ?>
+                        <div><a class="text-white me-3"
+                            href="includes/logoutUtilizador.php"><i class="bi bi-box-arrow-right"></i></a></div>
+                        
+        <?php } ?>
+            </div>   
+        </div>
+
+
+                    
 
 
 
@@ -113,7 +111,7 @@
             </form>
         </div>
 
-        <img src="imagens/<?= $artigo->imagem ?>" class="p-3 opacity-75" style="width:55%"
+        <img src="imagens/produtos/<?= $artigo->imagem ?>" class="p-3 opacity-75" style="width:55%"
             alt="<?= $artigo->nome?>"></img>
         <div>
             <div class="fs-6 text-uppercase">
@@ -149,7 +147,7 @@
     ?>
 
         <div class="my-5 mx-4">
-            <a href="vercarrinho.php"><button class="btn1">Ver carrinho</button></a>
+            <a href="verCarrinho.php"><button class="btn1">Ver carrinho</button></a>
         </div>
 
         <?php } else { ?>

@@ -17,6 +17,7 @@ body {
 
 #body-artigo {
     background-color: #bd9871;
+    min-height: 100vh;
 }
 
 .btn1 {
