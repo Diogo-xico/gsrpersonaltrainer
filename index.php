@@ -120,10 +120,10 @@
                 <div class="plano position-relative reveal">
                 <?php if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { 
 
-                    if($inf->permissao == 1) { ?>
+                    if($inf->permissao == (1 || 2)) { ?>
                     <h2 class="position-absolute start-0 top-0 pb-2"><?= $plano->id?></h2>
                     <?php }}     ?>
-                    <img class="img-fluid pb-2" src="imagens/planos/<?= $plano->imagem?>" alt="plano <?= $plano->titulo?>">
+                    <img class="img-fluid pb-2" style="max-width:64px; max-height:64px;" src="imagens/planos/<?= $plano->imagem?>" alt="plano <?= $plano->titulo?>">
                     <h2 class="titulo-subplano pb-2"><?= $plano->titulo?></h2>
                     <div class="pb-2"><?= $plano->descricao?>
                     </div>
@@ -131,16 +131,20 @@
             </div>
         <?php } if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { 
 
-                    if($inf->permissao == 1) { ?>
-                    <div class="d-flex justify-content-center">    
-                        <div class="col-sm-12 col-lg-7 w-25 pe-2">
+                    if($inf->permissao == (1 || 2)) { ?>
+                
+                       
+                       <div class="row">
+                        <div class="col-12 col-md-6 pe-2">
                             <button class="btn1 my-3" data-bs-toggle="modal"
-                        data-bs-target="#alterarPlano"><i class="bi bi-plus-square"></i> Adicionar Plano </button></button>
+                        data-bs-target="#alterarPlano"><i class="bi bi-plus-square"></i> Adicionar Plano </button>
                         </div>
-                        <div class=" col-sm-12 col-lg-7 w-25">
-                            <button class="btn1 my-3 " data-bs-toggle="modal"
-                        data-bs-target="#removerPlano"><i class="bi bi-dash-square"></i> Remover Plano </button></button>
+                        <div class="col-12 col-md-6">
+                            <button class="btn1 my-3" data-bs-toggle="modal"
+                        data-bs-target="#removerPlano"><i class="bi bi-dash-square"></i> Remover Plano </button>
                         </div>
+                    
+
 
                         <div class="modal fade" id="alterarPlano" tabindex="-1" 
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,13 +160,13 @@
                                     <div class="modal-body text-black">
                                         <form action="ajax/adicionarPlano.php" method="post" enctype="multipart/form-data">
                                             <div class="form-floating mb-3 w-100">
-                                                <input name="titulo" type="text" class="form-control" placeholder="Titulo Plano"
+                                                <input name="titulo" type="text" class="form-control" maxlength="30" placeholder="Titulo Plano"
                                                     required>
                                                 <label for="contactar-email">Título do plano</label>
                                             </div>
                                             <div class="form-floating mb-3 w-100">
                                                 <div for="contactar-email">Descrição do Plano</div>
-                                                <textarea name="descricao" type="text" class="form-control" aria-label="With textarea" required></textarea>
+                                                <textarea name="descricao" type="text" maxlength="120" class="form-control" aria-label="With textarea" required></textarea>
                                             </div>
                                             <div class="w-100">
                                                 Imagem

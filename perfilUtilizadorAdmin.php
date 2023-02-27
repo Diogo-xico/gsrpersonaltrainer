@@ -51,18 +51,22 @@
 
         $sth = $dbh->prepare($sql);
         $sth->bindParam('id', $id);
-        $sth->execute();
+       
         ?>
 
-    <?php
-        $inf = $sth->fetchObject();
-        ?>
+    
 
 
     <div id="perfil" class="container-fluid mt-5 p-5 reveal text-white ">
 
         <?php
-        if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { ?>
+        if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { 
+            if($inf->permissao == (1 || 2)) { ?>
+                
+                <?php
+                $sth->execute();
+                $inf = $sth->fetchObject();
+                ?>
         <div class="d-flex justify-content-center">
             <img src="public/<?= $inf->imagem ?>" class="img-thumbnail" alt="..." style="max-width:300px">
 
@@ -99,27 +103,42 @@
                     <?= $inf->peso ?>
                 </div>
             </div>
-            <div class="d-flex justify-content-center pb-3">
-                <a href="editarUser.php" class="btn btn1 mt-1 mb-3 text-center w-50" role="button">Editar Dados</a>
-            </div>
 
             <?php } else { ?>
-            <div
-                style=" background: linear-gradient(180deg, rgba(189, 152, 113, 0.8186624991793592) 0%, rgba(33, 37, 41, 1) 50%), min-height: 100vh;">
-                <div class="container pt-5">
+    <div
+        style=" background: linear-gradient(180deg, rgba(189, 152, 113, 0.8186624991793592) 0%, rgba(33, 37, 41, 1) 50%), min-height: 100vh;">
+        <div class="container pt-5">
 
-                    <div class="row">
-                        <div class="col-md-8 text-center mx-auto">
-                            <div class=" text-uppercase mt-5 fs-1">Ups, não devias estar aqui.</div>
-                            <div class="info fs-5">Para teres acesso a este conteúdo faz Login ou Regista-te
-                                <a href="loginUser.php" class="titulo"> aqui</a>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-md-8 text-center mx-auto">
+                    <div class=" text-uppercase mt-5 fs-1">Ups, não devias estar aqui.</div>
+                    <div class="info fs-5">Clica
+                        <a href="index.php" class="titulo"> aqui</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <?php } ?>
 
-            <?php } ?>
+    <?php } else { ?>
+
+    <div
+        style=" background: linear-gradient(180deg, rgba(189, 152, 113, 0.8186624991793592) 0%, rgba(33, 37, 41, 1) 50%), min-height: 100vh;">
+        <div class="container pt-5">
+
+            <div class="row">
+                <div class="col-md-8 text-center mx-auto">
+                    <div class=" text-uppercase mt-5 fs-1">Ups, não devias estar aqui.</div>
+                    <div class="info fs-5">Para teres acesso a este conteúdo faz Login ou Regista-te
+                        <a href="loginUser.php" class="titulo"> aqui</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php } ?>
         </div>
 
     </div>

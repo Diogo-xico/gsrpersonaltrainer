@@ -40,7 +40,7 @@
         <?php include_once('includes/menu.php'); ?>
     </header>
 
-    <div id="perfil" class="container-fluid mt-5 p-5 reveal text-white ">
+    <div class="container-fluid mt-5 p-5 reveal text-white ">
         <?php
         if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { ?>
 

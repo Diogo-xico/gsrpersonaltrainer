@@ -67,7 +67,7 @@
                     <?php
                     
             if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
-                 if (($inf->permissao) == 1){?>
+                 if (($inf->permissao) == (1 || 2)){?>
                         <div><a class="text-white me-3"
                                  href="consultarClientes.php"><i class="bi bi-search"></i></a></div>
                                 <?php } ?>
@@ -76,12 +76,7 @@
                         
         <?php } ?>
             </div>   
-        </div>
-
-
-                    
-
-
+        </div>     
 
 </nav>
 
@@ -103,60 +98,57 @@
                 $total = $carrinho['precoproduto'] * $carrinho['quantidadeproduto'];
                 ?>
 
+                <div class="pt-5 d-md-flex justify-content-md-end">
+                    <form action="ajax/removerCarrinho.php" method="post">
+                        <input type="hidden" name="idProduto" value="<?= $artigo->id ?>">
+                        <button type="submit" class="btn-close btn-close-white px-4" aria-label="Close"></button>
+                    </form>
+                </div> 
 
-        <div class="pt-5 d-md-flex justify-content-md-end">
-            <form action="ajax/removerCarrinho.php" method="post">
-                <input type="hidden" name="idProduto" value="<?= $artigo->id ?>">
-                <button type="submit" class="btn-close btn-close-white px-4" aria-label="Close"></button>
-            </form>
-        </div>
-
-        <img src="imagens/produtos/<?= $artigo->imagem ?>" class="p-3 opacity-75" style="width:55%"
-            alt="<?= $artigo->nome?>"></img>
-        <div>
-            <div class="fs-6 text-uppercase">
-                <?= $carrinho['nomeproduto'] ?>
-            </div>
-            <div class="fs-6 text-center">
-                Preço: <?= $carrinho['precoproduto'] ?> €
-            </div>
-            <?php if(($artigo -> categoria) === 1) { ?>
-            <div class="fs-6 text-center">
-                Tamanho: <?= $carrinho['tamanhoproduto'] ?>
-            </div>
-            <?php } else { ?>
-            <div class="fs-6 text-center">
-                Cor: <?= $carrinho['tamanhoproduto'] ?>
-            </div>
-            <?php } ?>
-            <div class="fs-6 text-center">
-                Quantidade: <?= $carrinho['quantidadeproduto'] ?>
-            </div>
-            <div class="fs-6 text-center pt-2">
-                Semi-Total: <?= $total ?> €
-            </div>
-            <hr class="text-white">
-        </div>
-        <?php 
+                <img src="imagens/produtos/<?= $artigo->imagem ?>" class="p-3 opacity-75" style="width:55%" alt="<?= $artigo->nome?>"></img>
+                <div>
+                    <div class="fs-6 text-uppercase">
+                        <?= $carrinho['nomeproduto'] ?>
+                    </div>
+                    <div class="fs-6 text-center">
+                        Preço: <?= $carrinho['precoproduto'] ?> € 
+                    </div>
+                    <?php if(($artigo -> categoria) === 1) { ?>
+                        <div class="fs-6 text-center">
+                        Tamanho: <?= $carrinho['tamanhoproduto'] ?>
+                    </div>
+                    <?php } else { ?>
+                    <div class="fs-6 text-center">
+                        Cor: <?= $carrinho['tamanhoproduto'] ?>
+                    </div>
+                    <?php } ?>
+                    <div class="fs-6 text-center">
+                        Quantidade: <?= $carrinho['quantidadeproduto'] ?>
+                    </div>
+                    <div class="fs-6 text-center pt-2">
+                        Semi-Total: <?= $total ?> €
+                    </div>
+                    <hr class="text-white">
+                </div>
+                <?php 
             } 
         } ?>
 
 
-        <?php
+    <?php
     if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {
-    ?>
+    ?> 
+        
+        <div class="my-5 mx-4">
+            <a href="verCarrinho.php" ><button class="btn1">Ver carrinho</button></a>
+        </div>      
+        
+    <?php } else { ?>
 
         <div class="my-5 mx-4">
-            <a href="verCarrinho.php"><button class="btn1">Ver carrinho</button></a>
-        </div>
+            <a href="loginUser.php" ><button class="btn1 ">Ver carrinho</button></a>
+        </div>   
 
-        <?php } else { ?>
-
-        <div class="my-5 mx-4">
-            <a href="loginUser.php"><button class="btn1 ">Ver carrinho</button></a>
-        </div>
-
-        <?php } ?>
-    </div>
-
+    <?php } ?>
+    </div>
 </div>

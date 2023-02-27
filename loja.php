@@ -62,6 +62,7 @@
                     ?>
                 </div>
             </div>
+            
             <!-- garrafa -->
             <div class="container my-5" id="garrafa">
                 <div class="display-5 text-center text-white">Garrafas</div>

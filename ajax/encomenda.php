@@ -49,7 +49,7 @@ if (isset($_SESSION['carrinho']) && !empty($_SESSION['carrinho']) && isset($_SES
         }
 
         unset($_SESSION['carrinho']);
-        header('Location:../loja.php');
+        header('Location:../encFinalizada.php');
         $sth = null;
 
         die();

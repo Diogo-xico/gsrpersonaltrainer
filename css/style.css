@@ -118,18 +118,6 @@ body {
     font-size: 20px;
 }
 
-.camisola img{
-    width: 512px;
-    height: 379,2px;
-}
-
-.camisola a {
-    color: #efefef;
-}
-
-.garrafa a {
-    color: #efefef;
-}
 
 .artigos {
     display: flex;
@@ -145,17 +133,6 @@ body {
     z-index: 2;
 }
 
-.artigos {
-    transition: 0.1s;
-    box-shadow: 4px 1px 20px 1px rgba(0, 0, 0, 0.5);
-    opacity: 0.90;
-}
-
-.artigos:hover {
-    opacity: 85%;
-    transform: scale(1.010);
-    z-index: 2;
-}
 
 .btn-artigo-selec {
     border:none;

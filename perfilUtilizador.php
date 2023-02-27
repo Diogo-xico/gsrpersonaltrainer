@@ -22,11 +22,6 @@
 
     }
 
-    .img {
-
-        max-width: 200px;
-
-    }
 
 }
 </style>
@@ -45,7 +40,7 @@
         <?php
         if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) { ?>
         <div class="d-flex justify-content-center">
-            <img src="public/<?= $inf->imagem ?>" class="img-thumbnail" alt="..." style="max-width:300px">
+            <img src="public/<?= $inf->imagem ?>" class="img-thumbnail" alt="..." style="max-width: 300px; max-height: 300px;">
 
         </div>
         <div class="titulo-transformacoes pt-5 pb-5 text-center ">

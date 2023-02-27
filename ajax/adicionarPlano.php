@@ -16,7 +16,7 @@ $img_name = $_FILES['imagem']['name'];
     
     if ($error === 0) {
 
-        if ($img_size > 5000000) {
+        if ($img_size > 1000000) {
             header('Location:../index.php?error=tamanhoImagem');
             exit;
         } else {
