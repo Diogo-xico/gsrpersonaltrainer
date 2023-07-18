@@ -44,21 +44,28 @@
         <?php include_once('includes/menu.php'); ?>
     </header>
     
-
-    <div id="banner-inicial" class="imagem-sec1 w-100 vh-100 d-flex justify-content-center align-items-center ">
-        <div class="content text-center">
+    
+    <div id="banner-inicial" class="imagem-sec1 w-100 vh-100 d-flex justify-content-center align-items-center">
+        <div class="text-center">
             <?php
             if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {?>
+<<<<<<< HEAD
                 <h1 class="texto-imagemsec1 text-white animate__animated animate__fadeInUp" style="font-size:100px;">
                 Bem-Vindo(a) <?= $inf->nome?></h1>
                 <?php } else { ?><h1 class="texto-imagemsec1 text-white animate__animated animate__fadeInUp" style="font-size:100px;">
                 Bem-Vindo(a)aaaa</h1>
+=======
+                <div class="text-white animate__animated animate__fadeInUp" style="font-size:100px">
+                Bem-Vindo(a) <?= $inf->nome?></div>
+                <?php } else { ?><h1 class="text-white animate__animated animate__fadeInUp" style="font-size:100px">
+                Bem-Vindo(a)</h1>
+>>>>>>> 85c900345be08e9d91611e9d6333d46ded649f38
              <?php } ?>
         </div>
     </div>
 
     <div id="sobremim" class="sobremim py-5">
-        <div class="sub-sobremim text-center p-5">
+        <div class="sub-sobremim d-flex justify-content-center p-5">
             <img class="img-fluid" src="imagens/sobremim.jpeg" alt="Sobre mim-imagem">
         </div>
         <div class="sub-sobremim align-self-center text-white p-5">
@@ -288,13 +295,13 @@
 
         <div class="col-12 col-lg-6">
                 <h1 class="p-2">Perguntas Frequentes</h1>
-                <div class="p-1" id="pergunta1">
+                <div class="p-2" id="pergunta1">
                     <a class="btn btn2 text-start" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
                         aria-expanded="false" aria-controls="multiCollapseExample1">A quem se destina este
                         acompanhamento?</a>
                     <div class="row">
                         <div class="col">
-                            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="collapse multi-collapse  my-3" id="multiCollapseExample1">
                                 <div class="card card-body">
                                     <div>
                                         <p>Este acompanhamento é para todas as pessoas que quiserem evoluir. A
@@ -317,13 +324,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-1" id="pergunta2">
+                <div class="p-2" id="pergunta2">
                     <a class="btn btn2 text-start" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button"
                         aria-expanded="false" aria-controls="multiCollapseExample1">Em que consiste o Online
                         Coaching?</a>
                     <div class="row">
                         <div class="col">
-                            <div class="collapse multi-collapse" id="multiCollapseExample2">
+                            <div class="collapse multi-collapse my-3" id="multiCollapseExample2">
                                 <div class="card card-body">
                                     Consiste num acompanhamento de personal training à distancia. Um acompanhamento
                                     super completo a todos os níveis mas sem a vertente presencial nos teus treinos.
@@ -333,13 +340,13 @@
                     </div>
 
                 </div>
-                <div class="p-1" id="pergunta3">
+                <div class="p-2" id="pergunta3">
                     <a class="btn btn2 text-start" data-bs-toggle="collapse" href="#multiCollapseExample3" role="button"
                         aria-expanded="false" aria-controls="multiCollapseExample1">Com que frequência são alterados os
                         planos?</a>
                     <div class="row">
                         <div class="col">
-                            <div class="collapse multi-collapse" id="multiCollapseExample3">
+                            <div class="collapse multi-collapse my-3" id="multiCollapseExample3">
                                 <div class="card card-body">
                                     Os planos são alterados mediante a evolução apresentada e apenas quando há
                                     necessidade. Os planos de treino têm por norma a duração de 4 a 8 semanas.
@@ -348,12 +355,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-1" id="pergunta4">
+                <div class="p-2" id="pergunta4">
                     <a class="btn btn2 text-start" data-bs-toggle="collapse" href="#multiCollapseExample4" role="button"
                         aria-expanded="false" aria-controls="multiCollapseExample4">Apenas posso treinar em casa, é possível?</a>
                     <div class="row">
                         <div class="col">
-                            <div class="collapse multi-collapse" id="multiCollapseExample4">
+                            <div class="collapse multi-collapse my-3" id="multiCollapseExample4">
                                 <div class="card card-body">
                                     Sem dúvida. Nós adaptamos os treinos para qualquer que seja a realidade vivida pelo cliente.
                                 </div>
