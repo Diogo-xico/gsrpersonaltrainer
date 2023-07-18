@@ -49,17 +49,10 @@
         <div class="text-center">
             <?php
             if (isset($_SESSION['logged']) && $_SESSION['logged'] == 1) {?>
-<<<<<<< HEAD
                 <h1 class="texto-imagemsec1 text-white animate__animated animate__fadeInUp" style="font-size:100px;">
                 Bem-Vindo(a) <?= $inf->nome?></h1>
                 <?php } else { ?><h1 class="texto-imagemsec1 text-white animate__animated animate__fadeInUp" style="font-size:100px;">
-                Bem-Vindo(a)/h1>
-=======
-                <div class="text-white animate__animated animate__fadeInUp" style="font-size:100px">
-                Bem-Vindo(a) <?= $inf->nome?></div>
-                <?php } else { ?><h1 class="text-white animate__animated animate__fadeInUp" style="font-size:100px">
-                Bem-Vindo(a)</h1>
->>>>>>> 85c900345be08e9d91611e9d6333d46ded649f38
+                Bem-Vindo(a)dawdawdw</h1>
              <?php } ?>
         </div>
     </div>
