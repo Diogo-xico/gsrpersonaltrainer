@@ -53,7 +53,7 @@
                 <h1 class="texto-imagemsec1 text-white animate__animated animate__fadeInUp" style="font-size:100px;">
                 Bem-Vindo(a) <?= $inf->nome?></h1>
                 <?php } else { ?><h1 class="texto-imagemsec1 text-white animate__animated animate__fadeInUp" style="font-size:100px;">
-                Bem-Vindo(a)aaaa</h1>
+                Bem-Vindo(a)/h1>
 =======
                 <div class="text-white animate__animated animate__fadeInUp" style="font-size:100px">
                 Bem-Vindo(a) <?= $inf->nome?></div>
