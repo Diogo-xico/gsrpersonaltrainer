@@ -20,13 +20,13 @@ Perfil de Utilizador:
 ![Captura de ecrã 2023-08-09 132405](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/ab1a020b-4a27-4611-9306-9c715461cd1a)
 
 Loja do Website:
-
+![Captura de ecrã 2023-08-09 132446](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/74ad5900-db89-4ef0-a96c-7c96f5920753)
 
 Página que mostra o produto e permite adicionar ao carrinho:
-![Captura de ecrã 2023-08-09 132521](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/51a9e13e-ebd5-4987-857c-3a241d7d5020)
+![Captura de ecrã 2023-08-09 132521](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/69b10bb5-0460-4d5b-8ccc-afec6f7727d7)
 
 Adicionar/Remover planos com permissão de administrador:
-![Captura de ecrã 2023-08-09 132151](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/3fb1b26a-e537-4009-8531-f3e39123bda9)
+![Captura de ecrã 2023-08-09 132151](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/8e98d53a-6e8e-4942-bfea-09c6d5ab99c2)
 
 Listagem dos utilizadores e consulta tendo permissão de admninistrador:
-![Captura de ecrã 2023-08-09 132608](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/fc9c46c4-305a-4f0d-b73b-3b2b229052ef)
+![Captura de ecrã 2023-08-09 132608](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/726da796-6f08-48e2-8d85-4bb908483d99)
