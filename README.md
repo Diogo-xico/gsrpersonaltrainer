@@ -4,7 +4,7 @@ Projeto da Cadeira de Desenvolvimento Web.
 Tem como funcionalidades enviar perguntas de clientes para o mail, login e logout do site, carrinho e adicionar compras a carrinho.
 
 Página Inicial:
-![Captura de ecrã 2023-08-09 131917](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/50da1d96-dbf3-44de-aa59-e1186d120d24)
+![Captura de ecrã 2023-08-09 131917](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/ee3ecda3-d6d0-4d2f-b99c-d27bd003f98e)
 
 Página para contactar administrador e de perguntas frequentes:
 ![image](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/6dc8413b-8f09-4b60-af09-80193014aaec)
