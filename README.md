@@ -9,6 +9,7 @@ Página Inicial:
 Página para contactar administrador e de perguntas frequentes:
 ![image](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/6dc8413b-8f09-4b60-af09-80193014aaec)
 
+
 Login:
 ![Captura de ecrã 2023-08-09 132055](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/a95c8e41-76b4-4030-8cac-874353c203ef)
 
