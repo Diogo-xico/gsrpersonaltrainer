@@ -11,16 +11,16 @@ Página para contactar administrador e de perguntas frequentes:
 
 
 Login:
-![Captura de ecrã 2023-08-09 132055](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/a95c8e41-76b4-4030-8cac-874353c203ef)
+![Captura de ecrã 2023-08-09 132014](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/e9f50f91-ad7b-4a51-aee5-d597f0cef90f)
 
 Registar:
-![Captura de ecrã 2023-08-09 132121](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/cf4d1f28-f44f-44e4-b2ca-657a8a3d227c)
+![Captura de ecrã 2023-08-09 132055](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/e3f337d5-65f0-4491-ae71-65447332bac8)
 
 Perfil de Utilizador:
-![Captura de ecrã 2023-08-09 132405](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/c4d43dff-0e5f-4b7c-8151-250f9f210caf)
+![Captura de ecrã 2023-08-09 132121](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/4ffcae31-c8f1-4731-88aa-732f73996860)
 
 Loja do Website:
-![Captura de ecrã 2023-08-09 132446](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/2659f889-8f99-4b7b-88d1-8c991f276975)
+![Captura de ecrã 2023-08-09 132405](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/ab1a020b-4a27-4611-9306-9c715461cd1a)
 
 Página que mostra o produto e permite adicionar ao carrinho:
 ![Captura de ecrã 2023-08-09 132521](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/51a9e13e-ebd5-4987-857c-3a241d7d5020)
