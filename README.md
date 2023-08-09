@@ -7,10 +7,18 @@ Tem como funcionalidades enviar perguntas de clientes para o mail, login e logou
 
 ![Captura de ecrã 2023-08-09 132014](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/93e85e80-1a15-4ebb-8570-66139c172e40)
 
+Login:
 ![Captura de ecrã 2023-08-09 132055](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/a95c8e41-76b4-4030-8cac-874353c203ef)
 
+Registar:
 ![Captura de ecrã 2023-08-09 132121](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/cf4d1f28-f44f-44e4-b2ca-657a8a3d227c)
 
 ![Captura de ecrã 2023-08-09 132151](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/3fb1b26a-e537-4009-8531-f3e39123bda9)
 
 ![Captura de ecrã 2023-08-09 132405](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/c4d43dff-0e5f-4b7c-8151-250f9f210caf)
+
+![Captura de ecrã 2023-08-09 132446](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/2659f889-8f99-4b7b-88d1-8c991f276975)
+
+![Captura de ecrã 2023-08-09 132521](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/51a9e13e-ebd5-4987-857c-3a241d7d5020)
+
+![Captura de ecrã 2023-08-09 132608](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/fc9c46c4-305a-4f0d-b73b-3b2b229052ef)
