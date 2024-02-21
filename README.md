@@ -1,7 +1,9 @@
 # gsrpersonaltrainer
 
 Projeto da Cadeira de Desenvolvimento Web.
-Tem como funcionalidades enviar perguntas de clientes para o mail, login e logout do site, carrinho e adicionar compras a carrinho.
+O objetivo do site era algo mais expositivo como mostrar informações do Personal Trainer, planos de treino e resultados obtidos de alguns clientes.
+Como funcionalidades o site permite enviar perguntas de clientes para o mail, utilizador pode criar conta e alterar os dados do seu perfil, adicionar compras a carrinho e fazer a respetiva compra.
+O admin consegue atribuir permissões, consultar clientes, adicionar/remover planos. 
 
 Página Inicial:
 ![Captura de ecrã 2023-08-09 131917](https://github.com/Diogo-xico/gsrpersonaltrainer/assets/72604366/ee3ecda3-d6d0-4d2f-b99c-d27bd003f98e)
